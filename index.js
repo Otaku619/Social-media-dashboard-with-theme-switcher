@@ -1,7 +1,5 @@
-var tog = localStorage.getItem("toggle");
-if(tog==undefined) tog=0;
-if (tog == 1){
-    dark();
+var tog = 1
+dark();
     Array.from(document.getElementsByClassName('card')).forEach((i) => {
         i.addEventListener("mouseover", () => {
             i.style.filter = "brightness(150%)"
@@ -18,28 +16,9 @@ if (tog == 1){
             i.style.filter = "brightness(100%)"
         });
     });
-}
-else if (tog == 0){
-    light();
-    Array.from(document.getElementsByClassName('card')).forEach((i) => {
-        i.addEventListener("mouseover", () => {
-            i.style.filter = "brightness(90%)"
-        });
-        i.addEventListener("mouseout", () => {
-            i.style.filter = "brightness(100%)"
-        });
-    });
-    Array.from(document.getElementsByClassName('tab')).forEach((i) => {
-        i.addEventListener("mouseover", () => {
-            i.style.filter = "brightness(90%)"
-        });
-        i.addEventListener("mouseout", () => {
-            i.style.filter = "brightness(100%)"
-        });
-    });
-}
+
+
 function dark() {
-    localStorage.setItem('toggle', 1);
     tog = 1;
     document.getElementById('circ').style.transform = "translateX(-21px)";
     document.getElementById('circ').style.background = "hsl(230, 17%, 14%)";
@@ -88,7 +67,6 @@ function dark() {
 
 }
 function light() {
-    localStorage.setItem('toggle', 0);
     tog = 0;
     document.getElementById('circ').style.transform = "none";
     document.getElementById('circ').style.background = "white";
@@ -134,7 +112,7 @@ function light() {
     });
 }
 document.getElementById("btn").addEventListener("click", () => {
-    if (tog == 0 || tog == undefined) {
+    if (tog == 0) {
         dark();
     }
     else if (tog == 1) {
