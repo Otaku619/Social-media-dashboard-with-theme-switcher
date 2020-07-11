@@ -2,6 +2,8 @@
 *{
     font-size:14px;
     font-weight: 400;
+    color: hsl(228, 12%, 44%);
+    transition: 0.4s;
 }
 body{
     font-family:'Inter', sans-serif;
@@ -22,9 +24,8 @@ body{
     border-radius: 0 0 30px 30px;
 } */
 .header{
-    width:80%;
+    width:90%;
     height:auto;
-    color:hsl(228, 12%, 44%);
     margin:28px auto 0;
 }
  p{
@@ -50,22 +51,24 @@ body{
 .btn-text{
 margin:auto;
 margin-left:0px;
+font-weight: 700;
 }
 .toggle-button{
     margin:auto;
     margin-right:0;
-    width:60px;
+    width:48px;
     height:25px;
     border-radius: 25px;
     border:none;
     outline:none;
     background-color: hsl(230, 22%, 74%);
     display:flex;
+    cursor: pointer;
 }
 .toggle-circle{
     height:19px;
     margin:auto;
-    margin-right:0;
+    margin-right:-2px;
     border-radius: 19px;
     width:19px;
     background-color:white;
@@ -78,26 +81,136 @@ margin-left:0px;
     width:95%;
 }
 .card{
-    margin:10px auto;
+    margin:15px auto;
     background: hsl(227, 47%, 96%);
     width:95%;
-    height:200px;
-    border-radius: 5px;
+    height:210px;
     display:flex;
     flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
 }
-.facebook{
-    border-top:5px hsl(208, 92%, 53%) solid;
+.card:before{
+    position:absolute;
+    top:0;
+    content:'';
+width:100%;
+height:5px;
+border-radius: 8px 8px 0 0;
 }
-.twitter{
-    border-top:5px hsl(203, 89%, 53%) solid;
+.facebook:before{
+    background: hsl(208, 92%, 53%);
 }
-.instagram{
-    border-top:5px transparent solid;
-    border-image: linear-gradient(90deg,hsl(37, 97%, 70%),hsl(329, 70%, 58%));
-border-image-slice: 1;
-border-radius: 0;
+.twitter:before{
+    background: hsl(203, 89%, 53%);
 }
-.youtube{
-    border-top:5px hsl(348, 97%, 39%) solid;
+.instagram:before{
+
+background: linear-gradient(90deg,hsl(37, 97%, 70%), hsl(329, 70%, 58%));
 }
+.youtube:before{
+    background: hsl(348, 97%, 39%);
+}
+#username{
+    margin:auto;
+    margin-top:20px;
+    display:flex;
+    height:auto;
+}
+.usertext{
+    margin:auto 0px;
+    font-weight:700;
+    margin-left:5px;
+}
+.card strong{
+    margin:auto;
+    font-weight: 700;
+    font-size:4rem;
+    color:hsl(230, 17%, 14%);
+    margin-top:20px;
+}
+.text{
+    margin:auto;
+    margin-bottom:75px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+#daily-status{
+    margin:auto;
+    transform: translateY(-50px);
+    font-weight:700;
+    display:flex;
+    color:#1EB589;
+}
+#daily-status svg{
+    margin:auto;
+    transform:translateX(-5px);
+}
+.youtube #daily-status{
+    color:#DC414C;
+}
+
+.overview{
+    width:90%;
+    font-weight: 700;
+    font-size:1.5em;
+    margin:auto;
+    margin-top:30px;
+}
+.overview-tabs{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    margin-top:30px;
+    width:95%;
+}
+.tab{
+    margin:15px auto;
+    background: hsl(227, 47%, 96%);
+    width:95%;
+    height:130px;
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+.line-1 span, .line-2 span, .line-2 #imp{
+    font-weight:700;
+}
+.line-1,.line-2{
+    display:flex;
+    margin-top:20px;
+}
+.line-1 span,.line-2 span{
+    margin:auto;
+    margin-left:20px;
+}
+.line-1 svg{
+    margin-right:30px;
+}
+.line-2 span{
+    font-size:2em;
+    color:hsl(230, 17%, 14%);
+    margin-top:12px;
+}
+#imp{
+    margin:auto;
+    margin-right:30px;
+    display:flex;
+    color:#1EB589;
+    margin-top:20px;
+    justify-content: center;
+}
+#imp svg{
+    margin:auto;
+    transform: translateX(-5px);
+}
+.down{
+    color:#DC414C !important;
+}
+
+
